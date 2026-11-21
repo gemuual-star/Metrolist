@@ -1,0 +1,11 @@
+name: Agent access test
+on:
+  push:
+    branches: [agent-test]
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Actions work on $GITHUB_REPOSITORY @ $GITHUB_SHA" && ls
